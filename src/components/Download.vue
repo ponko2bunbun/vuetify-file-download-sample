@@ -42,11 +42,11 @@ export default {
             })
 
             if (response && (200 == response.status)) {
-                const contentDisposition = response.headers["content-disposition"];
+                const contentDisposition = response.headers["content-disposition"]
                 const contentDispositions = contentDisposition.split(';')
                 const fileNames = contentDispositions[contentDispositions.length - 1].split('=')
                 fileName = fileNames[fileNames.length - 1]
-                saveAs(response.data, fileName);
+                saveAs(response.data, fileName)
             }
         }
     }
